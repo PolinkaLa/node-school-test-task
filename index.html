@@ -3,15 +3,29 @@
     <head>
         <meta charset="utf-8"/>
         <title>Node.js school test task</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="lib/maskedinput.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
         <form id="myForm">
             <input type="text" name="fio" placeholder="ФИО">
             <input type="text" name="email" placeholder="email">
-            <input type="text" name="phone" placeholder="телефон">
-            <input type="submit" id="submitButton">
+            <input type="text" name="phone" id="phone" placeholder="телефон">
+            <input type="submit" id="submitButton" onclick="var leng = document.getElementsById('phone'); var leng_th = leng.value;console.log(leng_th);">
         </form>
         <div id="resultContainer">
         </div>
+        <!-- <script>
+        var leng = document.getElementsByName('phone');
+        var leng_th = leng.value;
+        alert(leng_th);
+        </script> -->
+        <script type="text/javascript">
+            jQuery(function($){
+                $("#phone").mask("+7(999)999-99-99");
+            });
+        </script>
     </body>
 </html>
